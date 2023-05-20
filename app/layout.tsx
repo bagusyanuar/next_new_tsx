@@ -1,7 +1,7 @@
 import './globals.css'
-import { Open_Sans } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 
-const roboto = Open_Sans({
+const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import 'material-icons/iconfont/material-icons.css';
   
 :root {
   --primary-color: #1da1f2;
@@ -10,9 +10,16 @@
 
 body {
   /* font-family: 'Playfair Display', serif; */
+  background-color: #f5f4f0;
 }
 
 .bg-main {
   background-color: var(--primary-color);
 }
 
+.selected-nav {
+  border-bottom: 2px solid #FD661F;
+  position: absolute;
+  left: 0;
+  right: 50%;
+}
