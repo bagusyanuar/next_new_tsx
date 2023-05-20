@@ -1,41 +1,48 @@
-import Image from 'next/image'
-import Head from 'next/head'
 import React from 'react'
-import { Metadata, GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
-
-
+import ReactDom from 'react-dom'
+import { Metadata } from 'next'
+import Image from 'next/image'
+import BaseButton from '../components/form/button'
+import Head from 'next/head'
 export const metadata: Metadata = {
-  title: 'Homepage',
-  description: 'Desc',
-  openGraph: {
-    images: ['/assets/image/logo.png']
-  },
+  title: 'Teman Belajar',
+  description: 'Platform les privat offline atau online terpercaya seluruh indonesia',
+  // openGraph: {
+  //   images: ['/assets/image/logo.png']
+  // },
   other: {
-    pinterest: 'nopin'
+    pinterest: 'nopin',
+
   }
 }
 
-function IndexPage({ token }: PageProps) {
-  console.log(token);
-  
+export function clickButton(e: any) {
+
+}
+
+
+function IndexPage() {
   return (
-    <div>
-      <p>Hello world!</p>
-    </div>
+    <main>
+      <div className='hero h-[32rem] bg-main flex justify-center items-center'>
+        <div>
+          <div className='w-full flex justify-center mb-5'>
+            <Image src={`/assets/icons/logo.png`} height={50} width={200} alt='logo' className='' />
+          </div>
+          <h1 className='text-white text-3xl mb-3'>Find Your Best Private Tutor Now</h1>
+          <div className='w-full flex justify-center'>
+            <BaseButton>
+              <span>FIND NOW</span>
+              <span className="material-symbols-outlined text-slate-600">
+                arrow_right_alt
+              </span>
+            </BaseButton>
+          </div>
+
+        </div>
+      </div>
+    </main>
   );
 }
 
-type PageProps = {
-  token: string;
-}
-
-export const getServerSideProps: GetServerSideProps<{ pageProps: PageProps }> = async (context: GetServerSidePropsContext) => {
-  // ...
-  const pageProps: PageProps = {
-    token: 'mytoken'
-  }
-  return {
-    props: { pageProps },
-  }
-};
 export default IndexPage;
